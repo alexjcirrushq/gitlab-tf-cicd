@@ -6,7 +6,7 @@ default:
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
   before_script:
-    - mkdir -p ~/.aws && echo -e "[profile-name]\naws_access_key_id = $AWS_ACCESS_KEY_ID\naws_secret_access_key = $AWS_SECRET_ACCESS_KEY\n" > ~/.aws/credentials
+    - mkdir -p ~/.aws && echo -e "[default]\naws_access_key_id = $AWS_ACCESS_KEY_ID\naws_secret_access_key = $AWS_SECRET_ACCESS_KEY\n" > ~/.aws/credentials
     - cat ~/.aws/credentials
     - terraform init
   cache:
